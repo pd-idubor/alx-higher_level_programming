@@ -1,0 +1,3 @@
+#!/bin/bash
+TMP=$(echo $PYFILE | cut -d '.' -f 1)
+python3 -m py_compile $PYFILE && mv __pycache__/* $TMP.pyc && rm -rf __pycache__
