@@ -50,10 +50,10 @@ class SinglyLinkedList:
     def __init__(self):
         """Instantiation"""
         self.__head = None
-        tmp = self.__head
 
     def sorted_insert(self, value):
         new = Node(value)
+        tmp = self.__head
 
         if (self.__head is None):
             self.__head = new
