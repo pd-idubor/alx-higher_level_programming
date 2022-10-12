@@ -15,8 +15,8 @@ class Node:
                 data (int): integer value contained in the node
                 next_node(Node or None): next node
         """
-        self.__data = data
-        self.__next_node = next_node
+        self.data = data
+        self.next_node = next_node
 
     @property
     def data(self):
@@ -50,9 +50,9 @@ class SinglyLinkedList:
     def __init__(self):
         """Instantiation"""
         self.__head = None
+        tmp = self.__head
 
     def sorted_insert(self, value):
-        tmp = self.__head
         new = Node(value)
 
         if (self.__head is None):
@@ -78,7 +78,7 @@ class SinglyLinkedList:
         tmp = self.__head
         if tmp is None:
             return ("")
-        while (tmp and tmp.next_node is not None):
+        while (tmp.next_node is not None and tmp):
             print(tmp.data)
             tmp = tmp.next_node
         return (str(tmp.data))
