@@ -1,0 +1,54 @@
+2-matrix_divided.txt
+====================
+
+Using 2-matrix_divided.py
+-------------------------
+Defines a function that divides all the elements of a matrix:
+def matrix_divided(matrix, div).
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+--------------
+Implementation
+--------------
+`matrix_divided(...)` returns a new matrix that is a copy
+of `matrix` with all the elements divided by `div`
+
+#All elements are rounded to 2 decimal places
+---------------------------------------------
+>>> matrix = [
+...	[1, 2, 3],
+...	[4, 5, 6]
+...	]
+>>> matrix_divided(matrix, 3)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+>>> print(matrix)
+[[1, 2, 3], [4, 5, 6]]
+>>> print(matrix)
+[[1, 2, 3], [4, 5, 6]]
+
+#Check division by zero
+-----------------------
+>>> matrix_divided(matrix, 0)
+Traceback (most recent call last):
+    ...
+ZeroDivisionError: division by zero
+
+#Check for non-integer div
+--------------------------
+>>> matrix_divided(matrix, "2")
+Traceback (most recent call last):
+    ...
+TypeError: div must be a number
+
+#Invalid matrices
+-----------------
+>>> matrix_divided([[3, "9"], [15, 3]], 3)
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix = [[1, 2, 3, 7],[4, 5, 6]]
+>>> matrix_divided(matrix, 2)
+Traceback (most recent call last):
+    ...
+TypeError: Each row of the matrix must have the same size
