@@ -1,0 +1,22 @@
+5-text_indentation.txt
+======================
+
+Using 5-text_indentation.py
+----------------------
+Defines a function that prints a text:
+text_indentation(text)
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation("Hello.Yes?")
+Hello.
+<BLANKLINE>
+Yes?
+<BLANKLINE>
+
+--------------
+Implementation
+--------------
+`matrix_divided(...)` returns a new matrix that is a copy
+of `matrix` with all the elements divided by `div`
+
+---------------------------------------------
+
