@@ -1,0 +1,49 @@
+3-say_my_name.txt
+=================
+
+Using 3-say_my_name.py
+-----------------------
+Defines a function that prints a square:
+`print_square(size)`
+
+--------------
+Implementation
+--------------
+`print_square(...)` prints a square with the character `#`
+
+>>> print_square = __import__('4-print_square').print_square
+>>> print_square(1)
+#
+>>> print_square(4)
+####
+####
+####
+####
+
+#Check for size is 0
+--------------------
+Prints nothing
+>>> print_square(0)
+
+#Invalid sizes
+--------------
+>>> print_square(2.1)
+Traceback (most recent call last):
+	...
+TypeError: size must be an integer
+
+>>> print_square(-5)
+Traceback (most recent call last):
+	...
+ValueError: size must be >= 0
+
+>>> print_square(None)
+Traceback (most recent call last):
+	...
+TypeError: size must be an integer
+
+#An argument must be provided
+>>> print_square()
+Traceback (most recent call last):
+	...
+TypeError: print_square() missing 1 required positional argument: 'size'
