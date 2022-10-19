@@ -10,8 +10,12 @@ class TestMaxInteger(unittest.TestCase):
     """Defines unittests for max_integer"""
 
     def test_list(self):
-        """Test with a liet"""
+        """Test with a list"""
         self.assertEqual(max_integer([100, 7, 23, 1]), 100)
+
+    def text_max_last(self):
+        """Test with largest int at the end of the list"""
+        self.assertEqual(max_integer([43, 23, 1, 54]), 54)
 
     def test_single_val(self):
         """Test with a list of one element"""
