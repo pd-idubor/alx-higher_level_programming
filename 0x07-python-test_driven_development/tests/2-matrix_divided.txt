@@ -26,6 +26,9 @@ of `matrix` with all the elements divided by `div`
 >>> print(matrix)
 [[1, 2, 3], [4, 5, 6]]
 
+>>> matrix_divided([[3]], 3)
+[[1.0]]
+
 #Check division by zero
 -----------------------
 >>> matrix_divided(matrix, 0)
