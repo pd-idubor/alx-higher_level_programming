@@ -18,5 +18,13 @@ Implementation
 `matrix_divided(...)` returns a new matrix that is a copy
 of `matrix` with all the elements divided by `div`
 
----------------------------------------------
+>>> text_indentation("Hello.")
+Hello.
+<BLANKLINE>
 
+#Check for non-strings
+----------------------
+>>> text_indentation(None)
+Traceback (most recent call last):
+	...
+TypeError: text must be a string
