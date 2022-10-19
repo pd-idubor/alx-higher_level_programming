@@ -19,7 +19,7 @@ My name is Precious Idubor
 #The `last name` parameter is optional
 --------------------------------------
 >>> say_my_name("Daisy")
-My name is Daisy
+My name is Daisy 
 
 #Invalid first or last name
 ---------------------------
