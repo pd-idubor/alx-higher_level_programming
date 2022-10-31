@@ -92,3 +92,12 @@ class Rectangle(Base):
                 raise ValueError("{} must be >= 0".format(attribute))
         elif (value <= 0):
             raise ValueError("{} must be > 0".format(attribute))
+
+    def to_dictionary(self):
+        """Returns dictionary representation"""
+        return ({
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y})
