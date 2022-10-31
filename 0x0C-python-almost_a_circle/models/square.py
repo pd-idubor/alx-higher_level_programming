@@ -26,3 +26,19 @@ class Square(Rectangle):
         """Returns printablr rep of class"""
         return ("[Square] ({}) {}/{} - {}".format(self.id,
                 self.x, self.y, self.width))
+
+    def update(self, *args, **kwargs):
+        """Updating attributes with arguments"""
+        if (len(args) == 0):
+            for k, v in kwargs.items():
+                self.__setattr__(k, v)
+            return
+
+        try:
+            self.id = args[0]
+            self.size = args[1]
+            self.x = args[2]
+            self.y = args[3]
+
+        except IndexError:
+            pass
