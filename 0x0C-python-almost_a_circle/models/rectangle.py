@@ -54,6 +54,11 @@ class Rectangle(Base):
         """Rectangle area"""
         return (self.height * self.width)
 
+    def display(self):
+        """Prints rectangle in stdout"""
+        for x in range(self.height):
+            print("#" * self.width)
+
     @staticmethod
     def validator(attribute, value):
         if (type(value) != int):
