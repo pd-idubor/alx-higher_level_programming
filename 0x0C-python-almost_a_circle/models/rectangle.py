@@ -50,6 +50,10 @@ class Rectangle(Base):
         self.validator("y", value)
         self.__y = value
 
+    def area(self):
+        """Rectangle area"""
+        return (self.height * self.width)
+
     @staticmethod
     def validator(attribute, value):
         if (type(value) != int):
