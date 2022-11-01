@@ -3,6 +3,7 @@
     Defines 'Base' class
 """
 import json
+import csv
 
 
 class Base:
@@ -78,3 +79,42 @@ class Base:
             instances.append(tmp)
 
         return (instances)
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Serializes a list of objects in csv format"""
+        filename = cls.__name__ + ".csv"
+
+        with open(filename, "w", newline="", encoding="UTF-8") as f:
+            if list_objs is None or list_objs == []:
+                f.write("[]")
+
+            else:
+                if cls.__name__ == "Rectangle":
+                    fieldnames = ["id", "width", "height", "x", "y"]
+                else:
+                    fieldnames = ["id", "size", "x", "y"]
+                writer = csv.DictWriter(f, fieldnames=fieldnames)
+                for instance in list_objs:
+                    writer.writerow(instance.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Deserialize csv"""
+        filename = cls.__name__ + ".csv"
+
+        try:
+            with open(filename, newline='') as f:
+                if cls.__name__ == "Rectangle":
+                    fieldnames = ["id", "width", "height", "x", "y"]
+                else:
+                    fieldnames = ["id", "size", "x", "y"]
+
+                reader = csv.DictReader(f, fieldnames=fieldnames)
+                list_dicts = [dict([k, int(v)] for k, v in data.items())
+                              for data in reader]
+
+                return ([cls.create(**data) for data in list_dicts])
+
+        except IOError:
+            return ([])
