@@ -47,6 +47,7 @@ class Base:
             return []
         return (json.loads(json_string))
 
+    @classmethod
     def create(cls, **dictionary):
         """Returns an instance with already set attributes"""
         from models.rectangle import Rectangle
@@ -58,3 +59,22 @@ class Base:
             r = Square(5)
         r.update(**dictionary)
         return (r)
+
+    @classmethod
+    def load_from_file(cls):
+        """Returns a list of all instances"""
+        file_name = cls.__name__ + ".json"
+
+        try:
+            with open(file_name, encoding="UTF8") as f:
+                content = cls.from_json_string(f.read())
+        except IOError:
+            return []
+
+        instances = []
+
+        for instance in content:
+            tmp = cls.create(**instance)
+            instances.append(tmp)
+
+        return (instances)
