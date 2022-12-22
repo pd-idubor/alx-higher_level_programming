@@ -2,7 +2,7 @@
 
 const argArr = process.argv;
 function func (arr) {
-  if (arr[2] === undefined || arr.length === 3) {
+  if (arr.length === 2 || arr.length === 3) {
     return (0);
   }
 
