@@ -10,11 +10,16 @@ if __name__ == "__main__":
                          passwd=sys.argv[2], db=sys.argv[3], charset="utf8")
 
     cur = db.cursor()
-    cur.execute("SELECT cities.name FROM cities JOIN states ON\
-                state_id = states.id WHERE states.name = '{}'\
-                ORDER BY cities.id ASC".format(sys.argv[4]))
+    cur.execute("SELECT * FROM cities JOIN states ON\
+                state_id = states.id\
+                ORDER BY cities.id ASC")
     rows = cur.fetchall()
-    [print(row) for row in rows]
+    cities = ""
+    
+    for row in rows:
+       if row[4] == sys.argv[4]:
+           cities += row[2] + ", "
 
+    print(cities[:-2])
     cur.close()
     db.close()
