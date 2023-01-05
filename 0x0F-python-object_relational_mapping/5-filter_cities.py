@@ -15,10 +15,10 @@ if __name__ == "__main__":
                 ORDER BY cities.id ASC")
     rows = cur.fetchall()
     cities = ""
-    
+
     for row in rows:
-       if row[4] == sys.argv[4]:
-           cities += row[2] + ", "
+        if row[4] == sys.argv[4]:
+            cities += row[2] + ", "
 
     print(cities[:-2])
     cur.close()
