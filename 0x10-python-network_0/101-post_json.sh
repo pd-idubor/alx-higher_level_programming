@@ -1,3 +1,3 @@
 #!/bin/bash
 #POST a file
-curl -s -d @$2 $1
+curl -s -H "Content-Type: application/json" "$1" -d @$2
