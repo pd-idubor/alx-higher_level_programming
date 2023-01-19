@@ -13,6 +13,10 @@ if __name__ == "__main__":
 
     resp = requests.get(url, headers=head)
 
+    count = 0
     for val in resp.json():
+        if (count > 9):
+            break
         print("{}: {}".format(val['sha'],
               val['commit']['author']['name']))
+        count += 1
