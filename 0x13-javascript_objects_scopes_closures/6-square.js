@@ -6,8 +6,6 @@ class Square extends Sq {
   charPrint (c) {
     if (typeof (c) === 'undefined') {
       c = 'X';
-    } else {
-      c = 'C';
     }
 
     for (let i = 0; i < this.height; i++) {
